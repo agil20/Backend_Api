@@ -1,7 +1,9 @@
 ﻿using ApiAplication.Data;
+using ApiAplication.Dtos.ProductDtos;
 using ApiAplication.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ApiAplication.Controllers
@@ -17,33 +19,57 @@ namespace ApiAplication.Controllers
             _context = context;
         }
         [HttpGet("{id}")]
-        public IActionResult GetOne(int id) 
+        public IActionResult GetOne(int id)
         {
 
             Product product = _context.Products.FirstOrDefault(p => p.Id == id);
-            if (product==null)
+            if (product == null)
             {
                 return NotFound();
             }
-            return Ok(product);
+            ProductReturnTo productReturnTo = new ProductReturnTo
+            {
+                Name=product.Name,
+                Price=product.Price,
+                IsStock=product.IsStock,
+
+            };
+           
+            return Ok(productReturnTo);
 
         }
         [HttpGet]
-        public IActionResult GetAll(int id)
+        public IActionResult GetAll()
         {
-
-            return StatusCode(200, _context.Products.ToList());
+            var query =_context.Products.AsQueryable();
+            ProductListDto productListDto = new ProductListDto();
+            productListDto.Items = query.Select(p=> new ProductReturnTo { 
+            Name = p.Name,
+            Price = p.Price,
+            IsStock = p.IsStock,
+            
+            }).ToList();
+            productListDto.TotalCount=query.Count();
+            return Ok();
+         
         }
         [HttpPost]
-        public IActionResult Create(Product product)
+        public IActionResult Create(ProductCreateDto Createproduct)
         {
+            Product product = new Product
+            {
+                Name = Createproduct.Name,
+                IsStock = Createproduct.IsStock,
+                Price = Createproduct.Price,
+
+            };
             _context.Products.Add(product);
             _context.SaveChanges();
             return Ok();
-        
+
         }
         [HttpPatch("{id}")]
-        public IActionResult ChanegeIsPrice(int id,int price)
+        public IActionResult ChanegeIsPrice(int id, int price)
         {
             Product dbproduct = _context.Products.FirstOrDefault(p => p.Id == id);
             if (dbproduct == null)
@@ -55,8 +81,23 @@ namespace ApiAplication.Controllers
             _context.SaveChanges();
             return Ok();
         }
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, ProductUpdateDto productUpdateDto)
+        {
+            Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (product==null)
+            {
+                return NotFound();
+            }
+            product.Price = productUpdateDto.Price;
+            product.IsStock = productUpdateDto.IsStock;
+            product.Name = productUpdateDto.Name;
+            return Ok();
+        
+        
+        }
         [HttpDelete]
-        public IActionResult ChanegeIsPrice(int id)
+        public IActionResult Delete(int id)
         {
             Product dbproduct = _context.Products.FirstOrDefault(p => p.Id == id);
             if (dbproduct == null)

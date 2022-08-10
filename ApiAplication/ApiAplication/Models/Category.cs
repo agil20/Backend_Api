@@ -2,11 +2,10 @@
 
 namespace ApiAplication.Models
 {
-    public class Product:BaseEntity
+    public class Category:BaseEntity
     {
-   
         public string Name { get; set; }
-        public int Price { get; set; }
-        public bool IsStock{ get; set; }
+        public string Description { get; set; }
+
     }
 }

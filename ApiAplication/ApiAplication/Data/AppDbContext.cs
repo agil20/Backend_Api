@@ -1,4 +1,5 @@
-﻿using ApiAplication.Models;
+﻿using ApiAplication.Configuration;
+using ApiAplication.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiAplication.Data
@@ -10,5 +11,15 @@ namespace ApiAplication.Data
 
         }
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfiguration(new ProductConfiguration());
+        
+        
+        
+        }
+    
+    
     }
 }
