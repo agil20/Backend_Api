@@ -38,3 +38,7 @@ C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\obj\Debug\netcor
 C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.dll
 C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.pdb
 C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.genruntimeconfig.cache
+C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\asus\Desktop\ApiNewProject\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.MvcApplicationPartsAssemblyInfo.cs

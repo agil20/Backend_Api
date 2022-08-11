@@ -16,9 +16,12 @@ namespace ApiAplication.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new ProductConfiguration());
-                
+
+           
         }
+
     
-    
+
+
     }
 }
