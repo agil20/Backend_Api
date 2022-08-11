@@ -1,10 +1,14 @@
 ﻿using ApiAplication.Data;
 using ApiAplication.Dtos.ProductDtos;
+using ApiAplication.Extentions;
 using ApiAplication.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ApiAplication.Controllers
 {
@@ -13,10 +17,12 @@ namespace ApiAplication.Controllers
     public class ProductController : ControllerBase
     {
         private readonly AppDbContext _context;
+        public static IWebHostEnvironment _env; 
 
-        public ProductController(AppDbContext context)
+        public ProductController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         [HttpGet("{id}")]
         public IActionResult GetOne(int id)
@@ -32,6 +38,7 @@ namespace ApiAplication.Controllers
                 Name=product.Name,
                 Price=product.Price,
                 IsStock=product.IsStock,
+                ImageUrl= "http://localhost:6393/img/"+product.ImageUrl
 
             };
            
@@ -47,22 +54,43 @@ namespace ApiAplication.Controllers
             Name = p.Name,
             Price = p.Price,
             IsStock = p.IsStock,
-            
+                ImageUrl = "http://localhost:6393/img/" + p.ImageUrl
+
             }).ToList();
             productListDto.TotalCount=query.Count();
             return Ok();
          
         }
         [HttpPost]
-        public IActionResult Create(ProductCreateDto Createproduct)
+        public IActionResult Create([FromForm]ProductCreateDto Createproduct)
         {
+
+
+            bool existProduct = _context.Categories.Any(p => p.Name.ToLower() == Createproduct.Name.ToLower());
+            if (existProduct) return StatusCode(409);
+            if (Createproduct.Photo.IsImage())
+            {
+                return BadRequest();
+
+            }
+            if (Createproduct.Photo.ValidSize(200))
+            {
+                return BadRequest();
+
+            }
+
             Product product = new Product
             {
                 Name = Createproduct.Name,
                 IsStock = Createproduct.IsStock,
                 Price = Createproduct.Price,
 
+                ImageUrl = Createproduct.Photo.SaveImage(_env,"img")
+                ,CategoryId=Createproduct.CategoryId
             };
+            product.UpdateTime = System.DateTime.Now;
+
+
             _context.Products.Add(product);
             _context.SaveChanges();
             return Ok();
@@ -82,16 +110,29 @@ namespace ApiAplication.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id, ProductUpdateDto productUpdateDto)
+        public IActionResult Update(int id, [FromForm]ProductUpdateDto productUpdateDto)
         {
+        
             Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (_context.Categories.Any(p => p.Name.ToLower() == productUpdateDto.Name.ToLower() && product.Id != id))
+             {
+                return BadRequest();
+            
+            }
             if (product==null)
             {
                 return NotFound();
             }
+            string path = Path.Combine(_env.WebRootPath, "img",product.ImageUrl);
+            if (productUpdateDto.Photo!=null)
+            {
+                Helper.Helper.DeleteImage(path);
+            }
             product.Price = productUpdateDto.Price;
             product.IsStock = productUpdateDto.IsStock;
             product.Name = productUpdateDto.Name;
+            product.CategoryId = productUpdateDto.CategoryId;
+            _context.SaveChanges();
             return Ok();
         
         
@@ -110,5 +151,6 @@ namespace ApiAplication.Controllers
             _context.SaveChanges();
             return Ok();
         }
+       
     }
 }

@@ -30,7 +30,7 @@ namespace ApiAplication.Controllers
           CategoryReturnDto categoryReturnDto = new CategoryReturnDto
           {
                 Name = category.Name,
-             Description = category.Description,
+      
 
             };
 
@@ -45,7 +45,7 @@ namespace ApiAplication.Controllers
             cetogoryList.Items = query.Select(p => new CategoryReturnDto
             {
                 Name = p.Name,
-              Description= p.Description,
+       
 
             }).ToList();
             cetogoryList.TotalCount = query.Count();
@@ -58,7 +58,7 @@ namespace ApiAplication.Controllers
             Category category = new Category
             {
                 Name = categoryCreate.Name,
-                Description= categoryCreate.Description
+            
                
 
             };
@@ -77,7 +77,7 @@ namespace ApiAplication.Controllers
             }
 
             category.Name = CategoryUpdateDto.Name;
-            category.Description = CategoryUpdateDto.Description;
+      
             return Ok(category);
 
 
