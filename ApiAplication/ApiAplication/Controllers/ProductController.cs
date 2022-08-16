@@ -45,15 +45,17 @@ namespace ApiAplication.Controllers
         public IActionResult GetAll()
         {
             var query =_context.Products.AsQueryable();
-            ProductListDto productListDto = new ProductListDto();
-            productListDto.Items = query.Select(p=> new ProductReturnTo { 
-            Name = p.Name,
-            Price = p.Price,
-            IsStock = p.IsStock,
-                ImageUrl = "http://localhost:6393/img/" + p.ImageUrl
 
-            }).ToList();
-            productListDto.TotalCount=query.Count();
+            //productListDto.Items = query.Select(p=> new ProductReturnTo { 
+            //Name = p.Name,
+            //Price = p.Price,
+            //IsStock = p.IsStock,
+            //    ImageUrl = "http://localhost:6393/img/" + p.ImageUrl
+
+            //}).ToList();
+
+            List<ProductReturnTo> productReturnTos = _mapper.Map<List<ProductReturnTo>>(query.ToList());
+            ProductListDto productListDto =_mapper.Map<ProductListDto>(productReturnTos);
             return Ok(productListDto);
          
         }

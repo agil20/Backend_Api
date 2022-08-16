@@ -5,6 +5,7 @@ using ApiAplication.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ApiAplication.Controllers
@@ -40,15 +41,14 @@ namespace ApiAplication.Controllers
         public IActionResult GetAll()
         {
             var query = _context.Categories.AsQueryable();
-            CetogoryListDto cetogoryList = new CetogoryListDto();
-            cetogoryList.Items = query.Select(p => new CategoryReturnDto
-            {
-                Name = p.Name,
-       
+          
 
-            }).ToList();
-            cetogoryList.TotalCount = query.Count();
-            return Ok(cetogoryList);
+            List<CategoryReturnDto > categoryReturns=_mapper.Map<List<CategoryReturnDto>>(query.ToList());
+            CetogoryListDto cetogory = _mapper.Map<CetogoryListDto>(categoryReturns);
+          
+
+            return Ok(cetogory);
+          
 
         }
         [HttpPost]
