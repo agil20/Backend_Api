@@ -1,5 +1,6 @@
 using ApiAplication.Data;
 using ApiAplication.Dtos.ProductDtos;
+using ApiAplication.Mapping;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,14 @@ namespace ApiAplication
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
 
             });
+            services.AddAutoMapper(opt=>
+            {
+                opt.AddProfile(new MapperProfile());
+            
+            
+            }
+            
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

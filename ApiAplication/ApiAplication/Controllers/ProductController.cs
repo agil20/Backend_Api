@@ -2,6 +2,7 @@
 using ApiAplication.Dtos.ProductDtos;
 using ApiAplication.Extentions;
 using ApiAplication.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,11 +19,13 @@ namespace ApiAplication.Controllers
     {
         private readonly AppDbContext _context;
         public static IWebHostEnvironment _env; 
+       private readonly IMapper _mapper;
 
-        public ProductController(AppDbContext context, IWebHostEnvironment env)
+        public ProductController(AppDbContext context, IWebHostEnvironment env, IMapper mapper = null)
         {
             _context = context;
             _env = env;
+            _mapper = mapper;
         }
         [HttpGet("{id}")]
         public IActionResult GetOne(int id)
@@ -33,14 +36,7 @@ namespace ApiAplication.Controllers
             {
                 return NotFound();
             }
-            ProductReturnTo productReturnTo = new ProductReturnTo
-            {
-                Name=product.Name,
-                Price=product.Price,
-                IsStock=product.IsStock,
-                ImageUrl= "http://localhost:6393/img/"+product.ImageUrl
-
-            };
+            ProductReturnTo productReturnTo = _mapper.Map<ProductReturnTo>(product);
            
             return Ok(productReturnTo);
 
@@ -58,7 +54,7 @@ namespace ApiAplication.Controllers
 
             }).ToList();
             productListDto.TotalCount=query.Count();
-            return Ok();
+            return Ok(productListDto);
          
         }
         [HttpPost]

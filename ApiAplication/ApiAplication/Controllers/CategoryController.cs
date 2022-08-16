@@ -2,6 +2,7 @@
 using ApiAplication.Dtos.CategoryDtos;
 using ApiAplication.Dtos.ProductDtos;
 using ApiAplication.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -13,10 +14,12 @@ namespace ApiAplication.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CategoryController(AppDbContext context)
+        public CategoryController(AppDbContext context, IMapper mapper = null)
         {
             _context = context;
+            _mapper = mapper;
         }
         [HttpGet("{id}")]
         public IActionResult GetOne(int id)
@@ -27,12 +30,8 @@ namespace ApiAplication.Controllers
             {
                 return NotFound();
             }
-          CategoryReturnDto categoryReturnDto = new CategoryReturnDto
-          {
-                Name = category.Name,
-      
-
-            };
+          CategoryReturnDto categoryReturnDto =_mapper.Map<CategoryReturnDto>(category);
+         
 
             return Ok(categoryReturnDto);
 

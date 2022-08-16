@@ -8,6 +8,6 @@ namespace ApiAplication.Dtos.ProductDtos
         public int Price { get; set; }
         public bool IsStock { get; set; }
         public string ImageUrl { get; set; }
-        public IFormFile Photo { get; set; }
+      
     }
 }

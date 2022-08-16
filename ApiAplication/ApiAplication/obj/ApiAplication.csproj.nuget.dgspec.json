@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\ApiNewProject\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {}
+    "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desktop\\ApiNewProject\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
+    "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\ApiNewProject\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
         "projectName": "ApiAplication",
-        "projectPath": "C:\\Users\\asus\\Desktop\\ApiNewProject\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+        "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\ApiNewProject\\ApiAplication\\ApiAplication\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.2.1, )"
