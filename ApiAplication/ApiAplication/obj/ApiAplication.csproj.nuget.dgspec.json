@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {}
+    "C:\\Users\\asus\\Source\\Repos\\Backend_Apia\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
+    "C:\\Users\\asus\\Source\\Repos\\Backend_Apia\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Apia\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
         "projectName": "ApiAplication",
-        "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+        "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Apia\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api\\ApiAplication\\ApiAplication\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Apia\\ApiAplication\\ApiAplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
