@@ -3,6 +3,7 @@ using ApiAplication.Dtos.ProductDtos;
 using ApiAplication.Mapping;
 using ApiAplication.Models;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
@@ -75,8 +77,35 @@ namespace ApiAplication
                     }
                 });
             });
-        }
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+               opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
 
+            }).AddJwtBearer(opt=>
+            {
+                opt.SaveToken = true;
+                opt.RequireHttpsMetadata = false;
+                opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                 ValidateAudience=true,
+                 ValidateIssuerSigningKey=true,
+                 ValidateLifetime = true,
+                 ValidAudience= "http://localhost:6393/",
+                 ValidIssuer= "http://localhost:6393/",
+                 IssuerSigningKey=new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("cc870d56-968e-467a-aa63-0873e2603f11"))
+
+
+                };
+               
+            
+            });
+              
+              
+        }
+    
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -88,6 +117,7 @@ namespace ApiAplication
             app.UseSwaggerUI();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
             app.UseStaticFiles();

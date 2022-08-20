@@ -201,3 +201,12 @@ C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\obj\Debug\n
 C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.dll
 C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.pdb
 C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.genruntimeconfig.cache
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\asus\Source\Repos\Backend_Api11\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
