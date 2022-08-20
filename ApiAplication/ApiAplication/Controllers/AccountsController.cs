@@ -73,7 +73,7 @@ namespace ApiAplication.Controllers
             }
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
-            claims.Add(new Claim("Fulljame", user.FullName));
+            claims.Add(new Claim("Fullname", user.FullName));
             claims.Add(new Claim(ClaimTypes.Name, user.UserName));
             var roles = await _userManager.GetRolesAsync(user);
             claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
@@ -86,7 +86,7 @@ namespace ApiAplication.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddHours(3),
+                Expires = DateTime.UtcNow.AddHours(4).AddMinutes(15),
                 SigningCredentials=credentials,
                 Audience= "http://localhost:6393/",
                 Issuer= "http://localhost:6393/"
