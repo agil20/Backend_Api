@@ -1,12 +1,15 @@
 ﻿using ApiAplication.Data;
 using ApiAplication.Dtos.CategoryDtos;
 using ApiAplication.Dtos.ProductDtos;
+using ApiAplication.Med.Queries;
 using ApiAplication.Models;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ApiAplication.Controllers
 {
@@ -16,16 +19,22 @@ namespace ApiAplication.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IMediator mediatr;
 
-        public CategoryController(AppDbContext context, IMapper mapper = null)
+        public CategoryController(AppDbContext context, IMapper mapper = null, IMediator mediatr = null)
         {
             _context = context;
             _mapper = mapper;
+            this.mediatr = mediatr;
         }
         [HttpGet("{id}")]
-        public IActionResult GetOne(int id)
+        public async Task<IActionResult> GetOne(int id)
         {
 
+
+            //var query=new GetCategoryGetone() { 
+            //Id = id };
+            //return Task.FromResult(await mediatr.Send(query));
             Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
             if (category == null)
             {

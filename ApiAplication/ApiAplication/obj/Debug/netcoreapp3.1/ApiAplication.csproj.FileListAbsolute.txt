@@ -276,3 +276,6 @@ C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\obj\Deb
 C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.dll
 C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.pdb
 C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\obj\Debug\netcoreapp3.1\ApiAplication.genruntimeconfig.cache
+C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\MediatR.Contracts.dll
+C:\Users\asus\Desktop\ApiBackend\Backend_Api\ApiAplication\ApiAplication\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
