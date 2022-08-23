@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o18kaXNcjgPwHlDhF6fFEcigqRssGG3zqw4cvEVufj0CXpgfXJThS/QGAefs6MwsPITAxfJmBCbe3wyYQpvqcg==",
+  "dgSpecHash": "PQ9f3pBKv0wzu/JksB7yPq/egyIUdSFZLMrg6wMaTDt4CSlw5JRRlD4wOurpENPka9NooaJBSDxeOa38WCeTqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+  "projectFilePath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api112\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

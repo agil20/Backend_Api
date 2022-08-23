@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Med\Commands\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

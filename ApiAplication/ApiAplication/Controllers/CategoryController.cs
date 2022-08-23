@@ -1,6 +1,7 @@
 ﻿using ApiAplication.Data;
 using ApiAplication.Dtos.CategoryDtos;
 using ApiAplication.Dtos.ProductDtos;
+using ApiAplication.Med.Com;
 using ApiAplication.Med.Queries;
 using ApiAplication.Models;
 using AutoMapper;
@@ -49,32 +50,27 @@ namespace ApiAplication.Controllers
 
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var query = _context.Categories.AsQueryable();
-          
+            //var query = _context.Categories.AsQueryable();
 
-            List<CategoryReturnDto > categoryReturns=_mapper.Map<List<CategoryReturnDto>>(query.ToList());
-            CetogoryListDto cetogory = _mapper.Map<CetogoryListDto>(categoryReturns);
-          
 
-            return Ok(cetogory);
+            //List<CategoryReturnDto > categoryReturns=_mapper.Map<List<CategoryReturnDto>>(query.ToList());
+            //CetogoryListDto cetogory = _mapper.Map<CetogoryListDto>(categoryReturns);
+            var query = new GetCategoryAll();
+           
+            return Ok(await mediatr.Send(query));
+
           
 
         }
         [HttpPost]
-        public IActionResult Create(CategoryCreateDto categoryCreate)
+        public async Task<IActionResult> Create(CategoryCreate categoryCreate)
         {
-            Category category = new Category
-            {
-                Name = categoryCreate.Name,
-            
-               
 
-            };
-            _context.Categories.Add(category);
-            _context.SaveChanges();
-            return Ok();
+
+
+            return Ok(await mediatr.Send(categoryCreate));
 
         }
         [HttpPut("{id}")]
