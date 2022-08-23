@@ -89,18 +89,23 @@ namespace ApiAplication.Controllers
 
         }
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
-            if (category == null)
+            //Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
+            //if (category == null)
+            //{
+            //    return NotFound();
+            //}
+            //_context.Categories.Remove(category);
+
+
+            //_context.SaveChanges();
+            //return Ok();
+            var query = new DeleteCategory()
             {
-                return NotFound();
-            }
-            _context.Categories.Remove(category);
-
-
-            _context.SaveChanges();
-            return Ok();
+                Id = id
+            };
+            return Ok(await mediatr.Send(query));
         }
     }
 }
