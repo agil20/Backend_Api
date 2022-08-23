@@ -3,6 +3,7 @@ using ApiAplication.Dtos.ProductDtos;
 using ApiAplication.Mapping;
 using ApiAplication.Models;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,6 +43,7 @@ namespace ApiAplication
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
 
             });
+            services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(opt=>
             {
                 opt.AddProfile(new MapperProfile());

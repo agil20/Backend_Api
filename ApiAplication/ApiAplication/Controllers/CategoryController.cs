@@ -32,18 +32,20 @@ namespace ApiAplication.Controllers
         {
 
 
-            //var query=new GetCategoryGetone() { 
-            //Id = id };
-            //return Task.FromResult(await mediatr.Send(query));
-            Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
-            if (category == null)
+            var query = new GetCategoryGetone()
             {
-                return NotFound();
-            }
-          CategoryReturnDto categoryReturnDto =_mapper.Map<CategoryReturnDto>(category);
-         
+                Id = id
+            };
+            return Ok(await mediatr.Send(query));
+            //  Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
+            //  if (category == null)
+            //  {
+            //      return NotFound();
+            //  }
+            //CategoryReturnDto categoryReturnDto =_mapper.Map<CategoryReturnDto>(category);
 
-            return Ok(categoryReturnDto);
+
+            //  return Ok(categoryReturnDto);
 
         }
         [HttpGet]

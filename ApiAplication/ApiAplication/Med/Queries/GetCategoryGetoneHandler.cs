@@ -25,8 +25,8 @@ namespace ApiAplication.Med.Queries
         public Task<CategoryReturnDto> Handle(GetCategoryGetone request, CancellationToken cancellationToken)
         {
 
-            GetCategoryGetone getCategoryGetone = new GetCategoryGetone();
-            Category category = _context.Categories.FirstOrDefault(p => p.Id == getCategoryGetone.Id);
+        
+            Category category = _context.Categories.FirstOrDefault(p => p.Id == request.Id);
 
 
           

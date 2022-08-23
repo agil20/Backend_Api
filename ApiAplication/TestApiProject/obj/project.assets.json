@@ -7869,11 +7869,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asus\\Desktop\\ApiBackend\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
+      "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
       "projectName": "TestApiProject",
-      "projectPath": "C:\\Users\\asus\\Desktop\\ApiBackend\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
+      "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asus\\Desktop\\ApiBackend\\Backend_Api\\ApiAplication\\TestApiProject\\obj\\",
+      "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\TestApiProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7894,8 +7894,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\asus\\Desktop\\ApiBackend\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
-              "projectPath": "C:\\Users\\asus\\Desktop\\ApiBackend\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj"
+            "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
+              "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api1212\\ApiAplication\\ApiAplication\\ApiAplication.csproj"
             }
           }
         }
