@@ -6716,11 +6716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Api112\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+      "projectUniqueName": "C:\\Users\\asus\\Source\\Repos\\Backend_Api111\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
       "projectName": "ApiAplication",
-      "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api112\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
+      "projectPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api111\\ApiAplication\\ApiAplication\\ApiAplication.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api112\\ApiAplication\\ApiAplication\\obj\\",
+      "outputPath": "C:\\Users\\asus\\Source\\Repos\\Backend_Api111\\ApiAplication\\ApiAplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

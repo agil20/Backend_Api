@@ -74,17 +74,17 @@ namespace ApiAplication.Controllers
 
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id, CategoryUpdateDto CategoryUpdateDto)
+        public async Task< IActionResult> Update(int id, CategoryUpdateDto CategoryUpdateDto)
         {
-            Category category = _context.Categories.FirstOrDefault(p => p.Id == id);
-            if (category == null)
+            var query = new CategoryUpdate()
             {
-                return NotFound();
-            }
+               Id=id,   
+               Name=CategoryUpdateDto.Name,
 
-            category.Name = CategoryUpdateDto.Name;
-      
-            return Ok(category);
+
+            };
+
+            return Ok(await mediatr.Send(query));
 
 
         }

@@ -11,6 +11,7 @@ namespace ApiAplication.Mapping
         public MapperProfile()
         {
             CreateMap<Category, CategoryReturnDto>();
+            CreateMap<Category, CategoryUpdateDto>();
             CreateMap<Product, ProductReturnTo>()
                 .ForMember(i=>i.ImageUrl,map=>map.MapFrom(s=> "http://localhost:6393/img/"+s.ImageUrl));
 
@@ -21,6 +22,7 @@ namespace ApiAplication.Mapping
             CreateMap<List<ProductReturnTo>, ProductListDto>()
              .ForMember(l => l.TotalCount, map => map.MapFrom(s => s.Count))
              .ForMember(l => l.Items, map => map.MapFrom(s => s));
+
         }
     }
 }
