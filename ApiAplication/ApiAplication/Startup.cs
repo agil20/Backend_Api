@@ -1,5 +1,6 @@
 using ApiAplication.Data;
 using ApiAplication.Dtos.ProductDtos;
+using ApiAplication.Extentions;
 using ApiAplication.Mapping;
 using ApiAplication.Models;
 using FluentValidation.AspNetCore;
@@ -120,6 +121,7 @@ namespace ApiAplication
 
             app.UseRouting();
             app.UseAuthentication();
+            app.UseHello();
 
             app.UseAuthorization();
             app.UseStaticFiles();

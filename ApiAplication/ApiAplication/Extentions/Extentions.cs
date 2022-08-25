@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using ApiAplication.Middlewares;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
@@ -31,6 +33,10 @@ namespace ApiAplication.Extentions
                 file.CopyTo(stream);
             }
             return fileName;
+        }
+        public static IApplicationBuilder UseHello(this IApplicationBuilder applicationBuilder)
+        {
+            return applicationBuilder.UseMiddleware<HelloMiddleware>(); 
         }
     }
 }
