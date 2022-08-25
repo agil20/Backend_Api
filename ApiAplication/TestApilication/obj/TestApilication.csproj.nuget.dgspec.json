@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj": {}
+    "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApilication\\TestApilication.csproj": {}
   },
   "projects": {
     "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\ApiAplication\\ApiAplication.csproj": {
@@ -117,14 +117,14 @@
         }
       }
     },
-    "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj": {
+    "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApilication\\TestApilication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
-        "projectName": "TestApiProject",
-        "projectPath": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApiProject\\TestApiProject.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApilication\\TestApilication.csproj",
+        "projectName": "TestApilication",
+        "projectPath": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApilication\\TestApilication.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApiProject\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\ApiP322\\Backend_Api\\ApiAplication\\TestApilication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -161,29 +161,33 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
+            "FakeItEasy": {
               "target": "Package",
-              "version": "[10.0.1, )"
+              "version": "[3.1.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.7.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
             },
-            "NUnit": {
-              "target": "Package",
-              "version": "[3.13.3, )"
-            },
-            "NUnit.Analyzers": {
-              "target": "Package",
-              "version": "[3.3.0, )"
-            },
-            "NUnit3TestAdapter": {
-              "target": "Package",
-              "version": "[4.2.1, )"
-            },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
